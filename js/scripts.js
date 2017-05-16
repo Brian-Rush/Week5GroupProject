@@ -1,27 +1,20 @@
 //BUSINESS LOGIC BELOW
+//just testing if pushing a branch will create that branch
 
 //Library Object Constructor
-// function Library() {
-//   this.entriesArray = [];
-//   this.booksArray = [];
-// }
-//
-//Library Object to contain all books (and, therefore, entries)
-// var library = [bookOne, bookTwo];
-
-//Entry Object Constructor
-function Entry(bookTitle, bookAuthor, bookPage, entryTags) {
-  this.bookTitle = bookTitle;
-  this.bookAuthor = bookAuthor;
-  this.bookPage = bookPage;
-  this.entryTags = entryTags;
-  // this.imageId = this.bookTitle + "-" + this.bookAuthor + imageNum;
+function Library() {
+  this.booksArray = [];
+  this.entriesArray = [];
 }
 
-var entryOne = new Entry("Lost Cat", "JASON", 0, ["bom bom","head", "wall"]);
-console.log(entryOne);
-alert(entryOne);
-
+//Book Object Constructor
+function Book(bookTitle, bookAuthor, commonEntryTags, includedImageIds, entries) {
+  this.bookTitle = bookTitle;
+  this.bookAuthor = bookAuthor;
+  this.commonEntryTags = commonEntryTags;
+  this.includedImageIds = includedImageIds;
+  this.entries = entries;
+}
 // var entryTwo = new Entry() {
 //   bookTitle: "Lost Cat"
 //   bookAuthor: "JASON"
@@ -30,22 +23,69 @@ alert(entryOne);
 //   imageId: this.bookTitle + "-" + this.bookAuthor + "-2"
 // }
 
-//Book Object Constructor
-function Book() {
-  this.bookTitle = "";
-  this.bookAuthor = "";
-  this.commonEntryTags = [];
-  this.includedImageIds = [];
-  this.entries = [];
-}
+//Entry Object Constructor
+function Entry(entryName, bookTitle, bookAuthor, bookPage, entryTags) {
+  this.entryName = entryName;
+  this.bookTitle = bookTitle;
+  this.bookAuthor = bookAuthor;
+  this.bookPage = bookPage;
+  this.entryTags = entryTags;
+  // this.imageId = this.bookTitle + "-" + this.bookAuthor + imageNum;
+})
 
-// var bookOne = new Book() {
+
+
+Library.prototype.getAllEntries=function(){
+  var allEntries = []
+  this.booksArray.forEach(function(book){
+    console.log(book)
+    book.entries.forEach(function(entry){
+      allEntries.push(entry);
+    })
+  })
+  return allEntries;
+}
+Library.prototype.getAllTags=function(){
+  var allTags = []
+  this.booksArray.forEach(function(book){
+    book.entries.forEach(function(entries){
+      entries.entryTags.forEach(function(entry){
+        allTags.push(entry);
+      })
+    })
+  })
+  return allTags;
+}
+//
+
+var entryOne = new Entry("entryOne","Lost Cat", "JASON", 0, ["bom bom","head", "wall"]);
+console.log(entryOne);
+alert(entryOne);
+
+var entryTwo = new Entry("entryTwo", "Lost Cat", "JASON", 0, ["bom bom", "head", "talk"]);
+console.log(entryTwo);
+
+var lostCat = new Book("Lost Cat", "JASON", ["Lost Cat", "JASON"], [], [entryOne, entryTwo])
+
+
+
+//Library Object to contain all books (and, therefore, entries)
+var library = new Library();
+
+library.booksArray.push(lostCat);
+// {
 //   this.bookTitle: "book one";
 //   this.bookAuthor: "tom";
-//   this.commonEntryTags: ["bang", "gun", "chicken"];
+//   this.commonEntryTags: ["Lost Cat", "JASON"];
 //   this.includedImageIds: [];
-//   this.entries: [];
+//   this.entries: [entryOne, entryTwo];
 // }
+
+console.log(library.getAllTags());
+
+
+
+console.log(library);
 
 //Make new entry
 // var entryOne = new Entry()
@@ -65,20 +105,22 @@ function Book() {
 // }
 
 
-library.forEach(function(book) {
-  // console.log(store.name + " sells:");
-  book.entries.forEach(function(product) {
-    console.log(entries.entryTags);
-  });
-  console.log("\n");
-});
+// library.forEach(function(book) {
+//   // console.log(store.name + " sells:");
+//   book.entries.forEach(function(product) {
+//     console.log(entries.entryTags);
+//   });
+//   console.log("\n");
+// });
 
 
+console.log(library.getAllEntries());
 
 //USER LOGIC BELOW
 $(document).ready(function(){
-  $("form#tag-search-form").submit(function(event){
+  $("form#tag-search-form2").submit(function(event){
     event.preventDefault();
-    var userInput = $("input#tag-search").val();
+    // var userInput = $("input#tag-search").val();
+    $(".outputDisplay").append();
   });
 });
