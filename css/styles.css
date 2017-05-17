@@ -23,14 +23,14 @@ h1 {
 
 }
 
-#bookOneCoverImage{
+/*#bookOneCoverImage{
   display: none;
-}
+}*/
 #bookTwoCoverImage{
-  display: none;
+
 }
 img {
-  display: none;
+  /*display: none;*/
   width: 100%;
   margin: auto;
 }
@@ -63,7 +63,7 @@ img {
 
 
 .img_3-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Anyas-Ghost-thud-thud-thud.jpg");}
-.img_3-2 {background-image: url("file:///Users/Guest/Desktop/Week5GroupProject/img/Blorb-hhheuurrk.jpg");
+.img_3-2 {background-image: url("file:///Users/Guest/Desktop/Week5GroupProject/img/Borb-hhheuurrk.jpg");
 }
 .img_3-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Dressing-ptoo-ptoo.jpg");}
 
@@ -72,10 +72,11 @@ img {
 .img_4-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Sculptor-bamp-bamp-bamp.jpg");}
 
 .img_5-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Sculptor-blarrr.jpg");}
-
 .img_5-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Wrinkles-chof-chof-chof.jpg");}
 .img_5-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Zita-brakka-brakka.jpg");}
+
 .img_6-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Zita-mph-mmff.jpg");}
+.img_6-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Magic-Pen-pow.jpg");}
 
 
 *,
