@@ -5,6 +5,7 @@
   margin-top: 80px;
   padding-top: 20px;
   border: 5px solid black;
+
 }
 .container {
 
@@ -15,7 +16,7 @@
 }
 
 h1 {
-  font-size: 120px;
+  /*font-size: 500%;*/
 }
 
 .footer {
