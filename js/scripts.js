@@ -31,7 +31,7 @@ function Entry(entryName, bookTitle, bookAuthor, bookPage, entryTags) {
   this.bookPage = bookPage;
   this.entryTags = entryTags;
   // this.imageId = this.bookTitle + "-" + this.bookAuthor + imageNum;
-})
+}
 
 
 
@@ -60,7 +60,7 @@ Library.prototype.getAllTags=function(){
 
 var entryOne = new Entry("entryOne","Lost Cat", "JASON", 0, ["bom bom","head", "wall"]);
 console.log(entryOne);
-alert(entryOne);
+
 
 var entryTwo = new Entry("entryTwo", "Lost Cat", "JASON", 0, ["bom bom", "head", "talk"]);
 console.log(entryTwo);
@@ -118,9 +118,25 @@ console.log(library.getAllEntries());
 
 //USER LOGIC BELOW
 $(document).ready(function(){
-  $("form#tag-search-form2").submit(function(event){
-    event.preventDefault();
-    // var userInput = $("input#tag-search").val();
-    $(".outputDisplay").append();
-  });
+  // $("form#tag-search-form2").submit(function(event){
+  // event.preventDefault();
+    // event.preventDefault();
+    $("#bookOneCoverImage").fadeIn(1000);
+    $("#bookTwoCoverImage").fadeIn(1000);
+    $("#bookOneCoverImage").click(function(){
+      $(".paper-girls").show();
+
+    });
+    $("#bookTwoCoverImage").click(function(){
+      $(".the-photographer").show();
+      $("#book-container").show(".cover");
+    });
+
+// click on book 2
+//book 2 is displayed above and hidden BELOW
+//book 1 is hidden above and displayed BELOW
+
+
+
+  // });
 });
