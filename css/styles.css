@@ -23,14 +23,14 @@ h1 {
 
 }
 
-/*#bookOneCoverImage{
+#bookOneCoverImage{
   display: none;
-}*/
+}
 #bookTwoCoverImage{
-
+  display: none;
 }
 img {
-  /*display: none;*/
+  display: none;
   width: 100%;
   margin: auto;
 }
