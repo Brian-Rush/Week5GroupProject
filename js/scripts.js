@@ -121,25 +121,34 @@ $(document).ready(function(){
   // $("form#tag-search-form2").submit(function(event){
   // event.preventDefault();
     // event.preventDefault();
-    $("#bookOneCoverImage").fadeIn(1000);
-    $("#bookTwoCoverImage").fadeIn(1000);
-    $("#bookOneCoverImage").click(function(){
-      $(".paper-girls").show();
-
-    });
+    $(".cover").show();
+    // $("").click(function(){
+    //   $(".paper-girls").show();
+    // });
     $('.carousel').carousel({
-      interval: 30000
+      interval: 3000
     })
-    $("#bookTwoCoverImage").click(function(){
-      $(".the-photographer").show();
-      $("#book-container").show(".cover");
-    });
+    // $("#bookTwoCoverImage").click(function(){
+    //   $(".the-photographer").show();
+    //   $("#book-container").show(".cover");
+    // });
 
 // click on book 2
 //book 2 is displayed above and hidden BELOW
 //book 1 is hidden above and displayed BELOW
 
+// On click of cover image, get id
 
+$(".item").click(function(e) {
+  var clickedId = e.target.id;
+  console.log(clickedId);
+  var targetClass = "." + clickedId;
+  console.log(targetClass);
+  $(".square").hide();
+  $(targetClass).show();
+
+
+});
 
   // });
 });

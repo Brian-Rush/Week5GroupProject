@@ -24,12 +24,7 @@ h1 {
 
 }
 
-/*#bookOneCoverImage{
-  display: none;
-}*/
-#bookTwoCoverImage{
 
-}
 img {
   /*display: none;*/
   width: 100%;
@@ -37,12 +32,12 @@ img {
 }
 #cover-container {
   /*display: none;*/
-
   max-width: 60%;
   margin: auto;
 }
 
 .square {
+  display: none;
   float:left;
   position: relative;
   width: 30%;
@@ -80,13 +75,13 @@ img {
 .img_6-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Magic-Pen-pow.jpg");}
 
 
-*,
+/**,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
       box-sizing: border-box;
-}
+}*/
 
 .col-md-3 {
   /*float: left;*/
