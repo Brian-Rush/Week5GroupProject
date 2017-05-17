@@ -121,13 +121,12 @@ $(document).ready(function(){
   // $("form#tag-search-form2").submit(function(event){
   // event.preventDefault();
     // event.preventDefault();
-    $("#bookOneCoverImage").show();
-    $("#bookTwoCoverImage").show();
+    $(".cover").show();
     // $("").click(function(){
     //   $(".paper-girls").show();
     // });
     $('.carousel').carousel({
-      interval: 30000
+      interval: 3000
     })
     // $("#bookTwoCoverImage").click(function(){
     //   $(".the-photographer").show();
@@ -141,8 +140,12 @@ $(document).ready(function(){
 // On click of cover image, get id
 
 $(".item").click(function(e) {
-  console.log(e);
-  console.log(e.target.id);
+  var clickedId = e.target.id;
+  console.log(clickedId);
+  var targetClass = "." + clickedId;
+  console.log(targetClass);
+  $(".non-cover").hide();
+  $(targetClass).show();
 
 
 });
