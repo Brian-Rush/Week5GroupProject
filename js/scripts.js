@@ -127,6 +127,9 @@ $(document).ready(function(){
       $(".paper-girls").show();
 
     });
+    $('.carousel').carousel({
+      interval: 30000
+    })
     $("#bookTwoCoverImage").click(function(){
       $(".the-photographer").show();
       $("#book-container").show(".cover");
