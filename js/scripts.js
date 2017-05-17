@@ -123,23 +123,29 @@ $(document).ready(function(){
     // event.preventDefault();
     $("#bookOneCoverImage").show();
     $("#bookTwoCoverImage").show();
-    $("").click(function(){
-      $(".paper-girls").show();
-    });
+    // $("").click(function(){
+    //   $(".paper-girls").show();
+    // });
     $('.carousel').carousel({
       interval: 30000
     })
-    $("#bookTwoCoverImage").click(function(){
-      $(".the-photographer").show();
-      $("#book-container").show(".cover");
-    });
+    // $("#bookTwoCoverImage").click(function(){
+    //   $(".the-photographer").show();
+    //   $("#book-container").show(".cover");
+    // });
 
 // click on book 2
 //book 2 is displayed above and hidden BELOW
 //book 1 is hidden above and displayed BELOW
 
-// On click of image, get all classes and store in array
+// On click of cover image, get id
 
+$(".item").click(function(e) {
+  console.log(e);
+  console.log(e.target.id);
+
+
+});
 
   // });
 });
