@@ -121,11 +121,10 @@ $(document).ready(function(){
   // $("form#tag-search-form2").submit(function(event){
   // event.preventDefault();
     // event.preventDefault();
-    $("#bookOneCoverImage").fadeIn(1000);
-    $("#bookTwoCoverImage").fadeIn(1000);
-    $("#bookOneCoverImage").click(function(){
+    $("#bookOneCoverImage").show();
+    $("#bookTwoCoverImage").show();
+    $("").click(function(){
       $(".paper-girls").show();
-
     });
     $('.carousel').carousel({
       interval: 30000
@@ -139,6 +138,7 @@ $(document).ready(function(){
 //book 2 is displayed above and hidden BELOW
 //book 1 is hidden above and displayed BELOW
 
+// On click of image, get all classes and store in array
 
 
   // });
