@@ -144,7 +144,7 @@ $(".item").click(function(e) {
   console.log(clickedId);
   var targetClass = "." + clickedId;
   console.log(targetClass);
-  $(".non-cover").hide();
+  $(".square").hide();
   $(targetClass).show();
 
 

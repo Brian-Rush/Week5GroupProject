@@ -30,12 +30,12 @@ img {
 }
 #cover-container {
   /*display: none;*/
-
   max-width: 60%;
   margin: auto;
 }
 
 .square {
+  display: none;
   float:left;
   position: relative;
   width: 30%;
@@ -72,13 +72,13 @@ img {
 .img_6-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Zita-mph-mmff.jpg");}
 
 
-*,
+/**,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
       box-sizing: border-box;
-}
+}*/
 
 .col-md-3 {
   /*float: left;*/
