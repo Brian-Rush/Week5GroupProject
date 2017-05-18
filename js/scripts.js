@@ -82,10 +82,10 @@ $(document).ready(function(){
 
 $(".item").click(function(e) {
   var clickedId = e.target.id;
-  console.log(clickedId);
+  // console.log(clickedId);
   var targetClass = "." + clickedId;
-  console.log(targetClass);
-  $(".square").hide();
+  // console.log(targetClass);
+  $(".square-outline .row-hide").hide();
   $(targetClass).show();
 });
 
