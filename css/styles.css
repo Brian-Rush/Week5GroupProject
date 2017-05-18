@@ -16,22 +16,58 @@
         padding-right: auto;
         padding-top: .1em;
     }
+    .all-squares {
+        margin: auto;
+        }
 }
 @media all and (max-width: 1000px) { /* screen size until 1000px */
     .header {
-        font-size: 5em; /* 5em default size */
+        font-size: 4.5em; /* 5em default size */
         padding-left: auto;
         padding-right: auto;
         padding-top: .6em;
         }
+      .all-squares {
+          margin: auto;
+          }
     }
 @media all and (max-width: 500px) { /* screen size until 500px */
     .header {
-        font-size: 3.5em; /* 3.5em default size */
+        font-size:3.5em; /* 3.5em default size */
         padding-left: auto;
         padding-right: auto;
-        padding-top: 1.1em;
+        padding-top: .2em;
+        height: 110px;
         }
+    .all-squares {
+        margin: auto;
+        }
+    }
+
+@media all and (max-width: 400px) { /* screen size until 500px */
+    .header {
+        font-size:2.5em; /* 3.5em default size */
+        padding-left: auto;
+        padding-right: auto;
+        padding-top: .2em;
+        height: 75px;
+        }
+    .all-squares {
+        margin: auto;
+        }
+    }
+
+@media all and (max-width: 300px) { /* screen size until 500px */
+    .header {
+        font-size: 1.5em; /* 3.5em default size */
+        padding-left: auto;
+        padding-right: auto;
+        padding-top: .2em;
+        height: 50px;
+        }
+    .all-squares {
+        margin: auto;
+            }
     }
 
 .container {
@@ -41,10 +77,13 @@
   padding-left: 20%;
 }
 
-.footer {
+/*.footer {
   height: 100px;
-}
+}*/
 
+.all-squares {
+  height:100%;
+}
 .copyright {
   text-align: center;
   padding-top: 15%;
@@ -66,87 +105,120 @@ img {
 
 /* for pictures of very short height  */
 .picture {
-  width: 198px;
-  height: 198px;
+  width: 215px;
+  height: 215px;
   border: 2px solid black;
-  padding: 5%;
-  padding-top:25%;
+  padding-top: 8%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 /* for pictures that are pretty perfectly square */
 .picture1 {
-  width: 198px;
-  height: 198px;
-  padding: 5%;
+  width: 215px;
+  height: 215px;
+  padding: 1%;
   border: 2px solid black;
 }
 /* for pictures that are very long */
 .picture2 {
-  width: 198px;
-  height: 198px;
-  padding: 5%;
-  border: 2px solid black;
+    width: 215px;
+    height: 215px;
+    border: 2px solid black;
+    padding-left: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 /* for pictures that are medium height*/
 .picture3 {
-  width: 198px;
-  height: 198px;
-  padding: 5%;
-  padding-top: 17%;
+  width: 215px;
+  height: 215px;
+  padding-top: 5%;
   border: 2px solid black;
+  padding-left: .5%;
+  padding-right: .5%;
 }
 
-/* for pictures that need a little shove to the right*/
+/* for pictures that need even more of a shove to the right*/
 .picture5 {
-  width: 198px;
-  height: 198px;
-  padding-left: 12%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  border: 2px solid black;
+    width: 215px;
+    height: 215px;
+    padding-left: 3.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid black;
 }
 
 /* for pictures that need even more of a shove to the right*/
 .picture6 {
-  width: 198px;
-  height: 198px;
-  padding-left: 17%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  border: 2px solid black;
+    width: 215px;
+    height: 215px;
+    padding-left: 5.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid black;
 }
 
 /* for pictures that need even more of a shove to the right*/
 .picture7 {
-  width: 198px;
-  height: 198px;
-  padding-top: 9%;
-  padding-left: 3%;
-  padding-right: 3%;
-  border: 2px solid black;
+    width: 215px;
+    height: 215px;
+    padding-top: 4%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border: 2px solid black;
 }
 
 /* for pictures that need even more of a shove to the right*/
 .picture8 {
-  width: 198px;
-  height: 198px;
-  padding-top: 30%;
-  padding-left: 1%;
-  padding-right: 3%;
-  border: 2px solid black;
+    width: 215px;
+    height: 215px;
+    padding-top: 9%;
+    padding-right: .5%;
+    border: 2px solid black;
+}
+.picture9 {
+    width: 215px;
+    height: 215px;
+    border: 2px solid black;
+    padding-top: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.picture10 {
+    width: 215px;
+    height: 215px;
+    padding-top: 8%;
+    border: 2px solid black;
+    padding-left: .5%;
+    padding-right: .5%;
 }
 
 .square-outline {
   display: none;
   float: left;
+  margin: 4px;
 }
 
 .square {
   max-height: 100%;
   width: auto;
   max-width: 100%;
-  display: none;
+  /*display: none;*/
 }
+
+.footer {
+  height: 100px;
+}
+
+/*.square {
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    padding-top: 9%;
+    display: none;
+}*/
 
 *::before,
 *::after {
@@ -243,7 +315,7 @@ img {
           width: 100%;
       }
   }
- * {
+ /** {
    border: 2px solid red;
- }
+ }*/
 }

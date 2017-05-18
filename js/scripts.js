@@ -85,7 +85,7 @@ $(".item").click(function(e) {
   // console.log(clickedId);
   var targetClass = "." + clickedId;
   // console.log(targetClass);
-  $(".square-outline .row-hide").hide();
+  $(".square-outline").hide();
   $(targetClass).show();
 });
 
