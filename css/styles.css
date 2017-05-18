@@ -41,21 +41,22 @@
   padding-left: 20%;
 }
 
-h1 {
-  /*font-size: 500%;*/
-}
-
 .footer {
   height: 100px;
-
 }
 
+.copyright {
+  text-align: center;
+  padding-top: 15%;
+  padding-bottom: 1%;
+}
 
 img {
   /*display: none;*/
   width: 100%;
   margin: auto;
 }
+
 #cover-container {
   /*display: none;*/
   max-width: 60%;
@@ -73,7 +74,8 @@ img {
   background-repeat:no-repeat;
   background-size:contain;
 }
-.img_1-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-bang.jpg");}
+
+/*.img_1-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-bang.jpg");}
 .img_1-2 {background-image: url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-kachick.jpg");
 }
 .img_1-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-hwuhhh.jpg");}
@@ -98,16 +100,16 @@ img {
 .img_5-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Zita-brakka-brakka.jpg");}
 
 .img_6-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Zita-mph-mmff.jpg");}
-.img_6-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Magic-Pen-pow.jpg");}
+.img_6-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Magic-Pen-pow.jpg");}*/
 
 
-/**,
+
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
       box-sizing: border-box;
-}*/
+}
 
 .col-md-3 {
   /*float: left;*/
