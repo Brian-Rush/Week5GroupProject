@@ -41,10 +41,9 @@
   padding-left: 20%;
 }
 
-#myCarousel {
-  /*width: auto;*/
-  /*max-height: 700px;
-  overflow: hidden;*/
+.cover {
+  max-height: 60vh;
+  width: auto;
 }
 
 .footer {
