@@ -90,12 +90,48 @@ $(".item").click(function(e) {
 });
 
   //MODAL STUFF
+  // Get the modal
+  var modal = document.getElementById('myModal');
+
+// // Get the image and insert it inside the modal - use its "alt" text as a caption
+// var img = document.getElementById('myImg');
+// img.onclick = function(){
+//     modal.style.display = "block";
+//     captionText.innerHTML = this.alt;
+// }
+$('.square').click(function(clickedSquare) {
+  var modalImg = document.getElementById("lightbox-image");
+  console.log(modalImg);
+  var clickedSource = clickedSquare.target.src;
+  // console.log(clickedSource);
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  console.log(modalImg.src);
+  modalImg.style.display = "block";
+  // clickedSource;
+  //img/Paper-Girls-bang
+
+})
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+var captionText = //our array of tags
+
+
+
+
+
+
     // Get the modal
     // var modal = document.getElementById('myModal');
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     // $(".square").click(function() {
-    //   // $(this).
     //   var modalImg = document.getElementsByClassName("square");
     //   modal.style.display = "block";
     //   modalImg.src = $(this).css('background-image');
@@ -139,7 +175,16 @@ $(".item").click(function(e) {
   // });
 // });
 
+$(".item").click(function(e) {
+  var clickedId = e.target.id;
+  console.log(clickedId);
+  var targetClass = "." + clickedId;
+  console.log(targetClass);
+  $(".square").hide();
+  $(targetClass).show();
 
+
+});
 
 //Click listener, stores classes of clicked square image as array
 
