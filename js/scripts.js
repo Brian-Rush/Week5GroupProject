@@ -57,8 +57,6 @@ console.log(entryTwo);
 
 var lostCat = new Book("Lost Cat", "JASON", ["Lost Cat", "JASON"], [], [entryOne, entryTwo])
 
-
-
 //Library Object to contain all books (and, therefore, entries)
 var library = new Library();
 
@@ -77,9 +75,7 @@ $(document).ready(function(){
     $('.carousel').carousel({
       interval: 30000
     })
-
 // On click of cover image, get id
-
 $(".item").click(function(e) {
   var clickedId = e.target.id;
   console.log(clickedId);
@@ -88,49 +84,36 @@ $(".item").click(function(e) {
   $(".square").hide();
   $(targetClass).show();
 });
-
   //MODAL STUFF
   // Get the modal
   var modal = document.getElementById('myModal');
-
 // // Get the image and insert it inside the modal
+
 $('.square').click(function(clickedSquare) {
-  // var displayTags = [];
   var clickedClasses = clickedSquare.target.className;
   var displayTags = clickedClasses.split(" ")
-  console.log(displayTags);
-
   //Output tags of clicked image to text.
-  var outputTags = function() {
+  var outputTags = function(e) {
     for (var i = 2; i < displayTags.length; i++) {
-      // var individTag = function() {
-        $("#caption").append("<span id='[i]'>" + displayTags[i] + ", " + "</span>");
-      // }
-  //     return individTag;
-  //     alert("hi");
-  //     console.log(individTag);
+      var individTag = ("<span class='clickableTag' id=" + displayTags[i] + ">" + displayTags[i] + ", </span>")
+        $("#caption").append(individTag);
     }
   }
 
   outputTags();
 
-  // var outputTags = function() {
-  //   for (var i = 1; i < displayTags.length; i++) {
-  //     return displayTags[i];
-  //   }
-  //   console.log(outputTags[i]);
-
   var modalImg = document.getElementById("lightbox-image");
   var captionText = document.getElementById("caption");
   var clickedSource = clickedSquare.target.src;
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  modalImg.style.display = "block";
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    modalImg.style.display = "block";
   // captionText.innerHTML = displayTags;
   // clickedSource;
   //img/Paper-Girls-bang
 
-})
+  })
+
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
@@ -139,75 +122,38 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
+  $(".item").click(function(e) {
+    var clickedId = e.target.id;
+    console.log(clickedId);
+    var targetClass = "." + clickedId;
+    console.log(targetClass);
+    $(".square").hide();
+    $(targetClass).show();
+    });
 
-    // Get the modal
-    // var modal = document.getElementById('myModal');
+    $(document).on("click", "#submit_btn", function(event){
+    alert( "GO" );
+});
 
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    // $(".square").click(function() {
-    //   var modalImg = document.getElementsByClassName("square");
-    //   modal.style.display = "block";
-    //   modalImg.src = $(this).css('background-image');
-    //   captionText.innerHTML = this.class;
-    // })
-
-    // $(".square").click(function() {
-    //
-    //   var modalImg = $(this);
-    //   console.log(modalImg);
-    //   var captionText = document.getElementById("caption");
-    //   img.onclick = function(){
-    //     console.log("click!");
-    //       modal.style.display = "block";
-    //       modalImg.src = "http://fillmurray.com/400/400";
-    //       captionText.innerHTML = this.alt;
-    //   }
-    // });
-    // // $(".square").click(function() {
-    // //
-    // //   var modalImg = $(this);
-    // //   console.log(modalImg);
-    // //   var captionText = document.getElementById("caption");
-    // //   img.onclick = function(){
-    // //     console.log("click!");
-    // //       modal.style.display = "block";
-    // //       modalImg.src = "http://fillmurray.com/400/400";
-    // //       captionText.innerHTML = this.alt;
-    // //   }
-    // // });
-    // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //   modal.style.display = "none";
-    // }
-
-
-
+  $(document).on("click", ".clickableTag", function(e) {
+    debugger;
+    var clickedTag = e.target.id;
+    console.log(clickedTag);
+    var targetTagClass = "." + clickedTag;
+    console.log(targetTagClass);
+    modal.style.display = "none";
+    $(".square").hide();
+    $(targetTagClass).show();
+  });
+  // $(".clickableTag").click(function(e) {
+  //   debugger;
+  //   var clickedTag = e.target.id;
+  //   console.log(clickedTag);
+  //   var targetTagClass = "." + clickedTag;
+  //   console.log(targetTagClass);
+  //   modal.style.display = "none";
+  //   $(".square").hide();
+  //   $(targetTagClass).show();
   // });
-// });
-
-$(".item").click(function(e) {
-  var clickedId = e.target.id;
-  console.log(clickedId);
-  var targetClass = "." + clickedId;
-  console.log(targetClass);
-  $(".square").hide();
-  $(targetClass).show();
-
 
 });
-//Click listener, stores classes of clicked square image as array
-  //Output tags of clicked image to text.
-  // var outputTags = function() {
-  //   for (i = 1; i < displayTags.length; i++) {
-  //     return displayTags[i];
-  //   }
-  // }
-//   });
-});
-
-
-
-//
