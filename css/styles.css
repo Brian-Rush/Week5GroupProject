@@ -117,6 +117,13 @@ img {
   #lightbox-image {
     width: 100%;
   }
+
+  .clickableTag:hover {
+    color: pink;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   /* Modal Content (Image) */
   .modal-content {
       margin: auto;
