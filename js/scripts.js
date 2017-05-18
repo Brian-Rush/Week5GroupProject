@@ -78,10 +78,10 @@ $(document).ready(function(){
 // On click of cover image, get id
 $(".item").click(function(e) {
   var clickedId = e.target.id;
-  console.log(clickedId);
+  // console.log(clickedId);
   var targetClass = "." + clickedId;
-  console.log(targetClass);
-  $(".square").hide();
+  // console.log(targetClass);
+  $(".square-outline").hide();
   $(targetClass).show();
 });
   //MODAL STUFF
@@ -94,6 +94,7 @@ $('.square').click(function(clickedSquare) {
   var displayTags = clickedClasses.split(" ")
   //Output tags of clicked image to text.
   var outputTags = function(e) {
+    $("#caption").empty();
     for (var i = 2; i < displayTags.length; i++) {
       var individTag = ("<span class='clickableTag' id=" + displayTags[i] + ">" + displayTags[i] + ", </span>")
         $("#caption").append(individTag);
@@ -136,17 +137,18 @@ span.onclick = function() {
 });
 
   $(document).on("click", ".clickableTag", function(e) {
-    debugger;
     var clickedTag = e.target.id;
     console.log(clickedTag);
     var targetTagClass = "." + clickedTag;
     console.log(targetTagClass);
+    $(".square-outline").hide();
     modal.style.display = "none";
-    $(".square").hide();
+    // $(".square").hide();
+    $(targetTagClass).parent().show();
     $(targetTagClass).show();
+
   });
   // $(".clickableTag").click(function(e) {
-  //   debugger;
   //   var clickedTag = e.target.id;
   //   console.log(clickedTag);
   //   var targetTagClass = "." + clickedTag;
