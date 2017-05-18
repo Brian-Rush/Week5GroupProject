@@ -62,11 +62,11 @@ var lostCat = new Book("Lost Cat", "JASON", ["Lost Cat", "JASON"], [], [entryOne
 //Library Object to contain all books (and, therefore, entries)
 var library = new Library();
 
-library.booksArray.push(lostCat);
-
-console.log(library.getAllTags());
-
-console.log(library);
+// library.booksArray.push(lostCat);
+//
+// console.log(library.getAllTags());
+//
+// console.log(library);
 
 
 console.log(library.getAllEntries());
@@ -93,21 +93,40 @@ $(".item").click(function(e) {
   // Get the modal
   var modal = document.getElementById('myModal');
 
-// // Get the image and insert it inside the modal - use its "alt" text as a caption
-// var img = document.getElementById('myImg');
-// img.onclick = function(){
-//     modal.style.display = "block";
-//     captionText.innerHTML = this.alt;
-// }
+// // Get the image and insert it inside the modal
 $('.square').click(function(clickedSquare) {
+  // var displayTags = [];
+  var clickedClasses = clickedSquare.target.className;
+  var displayTags = clickedClasses.split(" ")
+  console.log(displayTags);
+
+  //Output tags of clicked image to text.
+  var outputTags = function() {
+    for (var i = 2; i < displayTags.length; i++) {
+      // var individTag = function() {
+        $("#caption").append("<span id='[i]'>" + displayTags[i] + ", " + "</span>");
+      // }
+  //     return individTag;
+  //     alert("hi");
+  //     console.log(individTag);
+    }
+  }
+
+  outputTags();
+
+  // var outputTags = function() {
+  //   for (var i = 1; i < displayTags.length; i++) {
+  //     return displayTags[i];
+  //   }
+  //   console.log(outputTags[i]);
+
   var modalImg = document.getElementById("lightbox-image");
-  console.log(modalImg);
+  var captionText = document.getElementById("caption");
   var clickedSource = clickedSquare.target.src;
-  // console.log(clickedSource);
   modal.style.display = "block";
   modalImg.src = this.src;
-  console.log(modalImg.src);
   modalImg.style.display = "block";
+  // captionText.innerHTML = displayTags;
   // clickedSource;
   //img/Paper-Girls-bang
 
@@ -119,12 +138,6 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
-
-var captionText = //our array of tags
-
-
-
-
 
 
     // Get the modal
@@ -185,22 +198,14 @@ $(".item").click(function(e) {
 
 
 });
-
 //Click listener, stores classes of clicked square image as array
-
-$(".square").click(function(x) {
-  // var displayTags = [];
-  var clickedClasses = x.target.className;
-  var displayTags = clickedClasses.split(" ")
-  console.log(displayTags);
-
   //Output tags of clicked image to text.
-  for (i = 1; i < displayTags.length; i++) {
-    return displayTags[i];
-  }
-
-
-  });
+  // var outputTags = function() {
+  //   for (i = 1; i < displayTags.length; i++) {
+  //     return displayTags[i];
+  //   }
+  // }
+//   });
 });
 
 
