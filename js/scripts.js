@@ -57,16 +57,14 @@ console.log(entryTwo);
 
 var lostCat = new Book("Lost Cat", "JASON", ["Lost Cat", "JASON"], [], [entryOne, entryTwo])
 
-
-
 //Library Object to contain all books (and, therefore, entries)
 var library = new Library();
 
-library.booksArray.push(lostCat);
-
-console.log(library.getAllTags());
-
-console.log(library);
+// library.booksArray.push(lostCat);
+//
+// console.log(library.getAllTags());
+//
+// console.log(library);
 
 
 console.log(library.getAllEntries());
@@ -77,9 +75,7 @@ $(document).ready(function(){
     $('.carousel').carousel({
       interval: 30000
     })
-
 // On click of cover image, get id
-
 $(".item").click(function(e) {
   var clickedId = e.target.id;
   // console.log(clickedId);
@@ -88,76 +84,78 @@ $(".item").click(function(e) {
   $(".square-outline").hide();
   $(targetClass).show();
 });
-
   //MODAL STUFF
-    // Get the modal
-    // var modal = document.getElementById('myModal');
+  // Get the modal
+  var modal = document.getElementById('myModal');
+// // Get the image and insert it inside the modal
 
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    // $(".square").click(function() {
-    //   // $(this).
-    //   var modalImg = document.getElementsByClassName("square");
-    //   modal.style.display = "block";
-    //   modalImg.src = $(this).css('background-image');
-    //   captionText.innerHTML = this.class;
-    // })
-
-    // $(".square").click(function() {
-    //
-    //   var modalImg = $(this);
-    //   console.log(modalImg);
-    //   var captionText = document.getElementById("caption");
-    //   img.onclick = function(){
-    //     console.log("click!");
-    //       modal.style.display = "block";
-    //       modalImg.src = "http://fillmurray.com/400/400";
-    //       captionText.innerHTML = this.alt;
-    //   }
-    // });
-    // // $(".square").click(function() {
-    // //
-    // //   var modalImg = $(this);
-    // //   console.log(modalImg);
-    // //   var captionText = document.getElementById("caption");
-    // //   img.onclick = function(){
-    // //     console.log("click!");
-    // //       modal.style.display = "block";
-    // //       modalImg.src = "http://fillmurray.com/400/400";
-    // //       captionText.innerHTML = this.alt;
-    // //   }
-    // // });
-    // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //   modal.style.display = "none";
-    // }
-
-
-
-  // });
-// });
-
-
-
-//Click listener, stores classes of clicked square image as array
-
-$(".square").click(function(x) {
-  // var displayTags = [];
-  var clickedClasses = x.target.className;
+$('.square').click(function(clickedSquare) {
+  var clickedClasses = clickedSquare.target.className;
   var displayTags = clickedClasses.split(" ")
-  console.log(displayTags);
-
   //Output tags of clicked image to text.
-  for (i = 1; i < displayTags.length; i++) {
-    return displayTags[i];
+  var outputTags = function(e) {
+    $("#caption").empty();
+    for (var i = 2; i < displayTags.length; i++) {
+      var individTag = ("<span class='clickableTag' id=" + displayTags[i] + ">" + displayTags[i] + ", </span>")
+        $("#caption").append(individTag);
+    }
   }
 
+  outputTags();
 
-  });
+  var modalImg = document.getElementById("lightbox-image");
+  var captionText = document.getElementById("caption");
+  var clickedSource = clickedSquare.target.src;
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    modalImg.style.display = "block";
+  // captionText.innerHTML = displayTags;
+  // clickedSource;
+  //img/Paper-Girls-bang
+
+  })
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+  $(".item").click(function(e) {
+    var clickedId = e.target.id;
+    console.log(clickedId);
+    var targetClass = "." + clickedId;
+    console.log(targetClass);
+    $(".square").hide();
+    $(targetClass).show();
+    });
+
+    $(document).on("click", "#submit_btn", function(event){
+    alert( "GO" );
 });
 
+  $(document).on("click", ".clickableTag", function(e) {
+    var clickedTag = e.target.id;
+    console.log(clickedTag);
+    var targetTagClass = "." + clickedTag;
+    console.log(targetTagClass);
+    $(".square-outline").hide();
+    modal.style.display = "none";
+    // $(".square").hide();
+    $(targetTagClass).parent().show();
+    $(targetTagClass).show();
 
+  });
+  // $(".clickableTag").click(function(e) {
+  //   var clickedTag = e.target.id;
+  //   console.log(clickedTag);
+  //   var targetTagClass = "." + clickedTag;
+  //   console.log(targetTagClass);
+  //   modal.style.display = "none";
+  //   $(".square").hide();
+  //   $(targetTagClass).show();
+  // });
 
-//
+});
