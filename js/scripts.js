@@ -15,13 +15,6 @@ function Book(bookTitle, bookAuthor, commonEntryTags, includedImageIds, entries)
   this.includedImageIds = includedImageIds;
   this.entries = entries;
 }
-// var entryTwo = new Entry() {
-//   bookTitle: "Lost Cat"
-//   bookAuthor: "JASON"
-//   bookPage: 0
-//   entryTags: ["fart","poop","wall"]
-//   imageId: this.bookTitle + "-" + this.bookAuthor + "-2"
-// }
 
 //Entry Object Constructor
 function Entry(entryName, bookTitle, bookAuthor, bookPage, entryTags) {
@@ -32,8 +25,6 @@ function Entry(entryName, bookTitle, bookAuthor, bookPage, entryTags) {
   this.entryTags = entryTags;
   // this.imageId = this.bookTitle + "-" + this.bookAuthor + imageNum;
 }
-
-
 
 Library.prototype.getAllEntries=function(){
   var allEntries = []
@@ -61,94 +52,110 @@ Library.prototype.getAllTags=function(){
 var entryOne = new Entry("entryOne","Lost Cat", "JASON", 0, ["bom bom","head", "wall"]);
 console.log(entryOne);
 
-
 var entryTwo = new Entry("entryTwo", "Lost Cat", "JASON", 0, ["bom bom", "head", "talk"]);
 console.log(entryTwo);
 
 var lostCat = new Book("Lost Cat", "JASON", ["Lost Cat", "JASON"], [], [entryOne, entryTwo])
 
-
-
 //Library Object to contain all books (and, therefore, entries)
 var library = new Library();
 
-library.booksArray.push(lostCat);
-// {
-//   this.bookTitle: "book one";
-//   this.bookAuthor: "tom";
-//   this.commonEntryTags: ["Lost Cat", "JASON"];
-//   this.includedImageIds: [];
-//   this.entries: [entryOne, entryTwo];
-// }
-
-console.log(library.getAllTags());
-
-
-
-console.log(library);
-
-//Make new entry
-// var entryOne = new Entry()
-// this.bookTitle = "Lost Cat";
-// this.bookAuthor = "JASON";
-// this.bookPage = 0;
-// this.entryTags = ["BOM BOM","Head Bonk","Frustration", "Frustrated","Wall","Head","Impact", "Twice","Repeated"];
-// this.imageId = "";
-
-// library.prototype.compareInputToTagArray(userInput) {
-//   // for (i = 0; i < this.entryTags.length; i++) {
-//     if (libraryOne.this.entryTags.includes(userInput)) {
-//       getElementsByClassName('userInput')
-//       // return userInput;
-//     }
-//   }
-// }
-
-
-// library.forEach(function(book) {
-//   // console.log(store.name + " sells:");
-//   book.entries.forEach(function(product) {
-//     console.log(entries.entryTags);
-//   });
-//   console.log("\n");
-// });
+// library.booksArray.push(lostCat);
+//
+// console.log(library.getAllTags());
+//
+// console.log(library);
 
 
 console.log(library.getAllEntries());
 
 //USER LOGIC BELOW
 $(document).ready(function(){
-  // $("form#tag-search-form2").submit(function(event){
-  // event.preventDefault();
-    // event.preventDefault();
     $(".cover").show();
-    // $("").click(function(){
-    //   $(".paper-girls").show();
-    // });
     $('.carousel').carousel({
-      interval: 3000
+      interval: 30000
     })
-    // $("#bookTwoCoverImage").click(function(){
-    //   $(".the-photographer").show();
-    //   $("#book-container").show(".cover");
-    // });
-
-// click on book 2
-//book 2 is displayed above and hidden BELOW
-//book 1 is hidden above and displayed BELOW
-
 // On click of cover image, get id
-
 $(".item").click(function(e) {
   var clickedId = e.target.id;
-  console.log(clickedId);
+  // console.log(clickedId);
   var targetClass = "." + clickedId;
-  console.log(targetClass);
-  $(".square").hide();
+  // console.log(targetClass);
+  $(".square-outline").hide();
   $(targetClass).show();
+});
+  //MODAL STUFF
+  // Get the modal
+  var modal = document.getElementById('myModal');
+// // Get the image and insert it inside the modal
 
+$('.square').click(function(clickedSquare) {
+  var clickedClasses = clickedSquare.target.className;
+  var displayTags = clickedClasses.split(" ")
+  //Output tags of clicked image to text.
+  var outputTags = function(e) {
+    $("#caption").empty();
+    for (var i = 2; i < displayTags.length; i++) {
+      var individTag = ("<span class='clickableTag' id=" + displayTags[i] + ">" + displayTags[i] + ", </span>")
+        $("#caption").append(individTag);
+    }
+  }
 
+  outputTags();
+
+  var modalImg = document.getElementById("lightbox-image");
+  var captionText = document.getElementById("caption");
+  var clickedSource = clickedSquare.target.src;
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    modalImg.style.display = "block";
+  // captionText.innerHTML = displayTags;
+  // clickedSource;
+  //img/Paper-Girls-bang
+
+  })
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+  $(".item").click(function(e) {
+    var clickedId = e.target.id;
+    console.log(clickedId);
+    var targetClass = "." + clickedId;
+    console.log(targetClass);
+    $(".square").hide();
+    $(targetClass).show();
+    });
+
+    $(document).on("click", "#submit_btn", function(event){
+    alert( "GO" );
 });
 
+  $(document).on("click", ".clickableTag", function(e) {
+    var clickedTag = e.target.id;
+    console.log(clickedTag);
+    var targetTagClass = "." + clickedTag;
+    console.log(targetTagClass);
+    $(".square-outline").hide();
+    modal.style.display = "none";
+    // $(".square").hide();
+    $(targetTagClass).parent().show();
+    $(targetTagClass).show();
+
+  });
+  // $(".clickableTag").click(function(e) {
+  //   var clickedTag = e.target.id;
+  //   console.log(clickedTag);
+  //   var targetTagClass = "." + clickedTag;
+  //   console.log(targetTagClass);
+  //   modal.style.display = "none";
+  //   $(".square").hide();
+  //   $(targetTagClass).show();
   // });
+
 });

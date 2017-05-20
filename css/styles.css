@@ -16,22 +16,58 @@
         padding-right: auto;
         padding-top: .1em;
     }
+    .all-squares {
+        margin: auto;
+        }
 }
 @media all and (max-width: 1000px) { /* screen size until 1000px */
     .header {
-        font-size: 5em; /* 5em default size */
+        font-size: 4.5em; /* 5em default size */
         padding-left: auto;
         padding-right: auto;
         padding-top: .6em;
         }
+      .all-squares {
+          margin: auto;
+          }
     }
 @media all and (max-width: 500px) { /* screen size until 500px */
     .header {
-        font-size: 3.5em; /* 3.5em default size */
+        font-size:3.5em; /* 3.5em default size */
         padding-left: auto;
         padding-right: auto;
-        padding-top: 1.1em;
+        padding-top: .2em;
+        height: 110px;
         }
+    .all-squares {
+        margin: auto;
+        }
+    }
+
+@media all and (max-width: 400px) { /* screen size until 500px */
+    .header {
+        font-size:2.5em; /* 3.5em default size */
+        padding-left: auto;
+        padding-right: auto;
+        padding-top: .2em;
+        height: 75px;
+        }
+    .all-squares {
+        margin: auto;
+        }
+    }
+
+@media all and (max-width: 300px) { /* screen size until 500px */
+    .header {
+        font-size: 1.5em; /* 3.5em default size */
+        padding-left: auto;
+        padding-right: auto;
+        padding-top: .2em;
+        height: 50px;
+        }
+    .all-squares {
+        margin: auto;
+            }
     }
 
 .container {
@@ -41,14 +77,13 @@
   padding-left: 20%;
 }
 
-.footer {
-  height: 100px;
+.cover {
+  max-height: 60vh;
+  width: auto;
 }
 
-.copyright {
-  text-align: center;
-  padding-top: 15%;
-  padding-bottom: 1%;
+.all-squares {
+  height:100%;
 }
 
 img {
@@ -63,46 +98,122 @@ img {
   margin: auto;
 }
 
-.square {
+/* for pictures of very short height  */
+.picture {
+  width: 215px;
+  height: 215px;
+  border: 2px solid black;
+  padding-top: 8%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+/* for pictures that are pretty perfectly square */
+.picture1 {
+  width: 215px;
+  height: 215px;
+  padding: 1%;
+  border: 2px solid black;
+}
+/* for pictures that are very long */
+.picture2 {
+    width: 215px;
+    height: 215px;
+    border: 2px solid black;
+    padding-left: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+/* for pictures that are medium height*/
+.picture3 {
+  width: 215px;
+  height: 215px;
+  padding-top: 5%;
+  border: 2px solid black;
+  padding-left: .5%;
+  padding-right: .5%;
+}
+
+/* for pictures that need even more of a shove to the right*/
+.picture5 {
+    width: 215px;
+    height: 215px;
+    padding-left: 3.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid black;
+}
+
+/* for pictures that need even more of a shove to the right*/
+.picture6 {
+    width: 215px;
+    height: 215px;
+    padding-left: 5.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid black;
+}
+
+/* for pictures that need even more of a shove to the right*/
+.picture7 {
+    width: 215px;
+    height: 215px;
+    padding-top: 4%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border: 2px solid black;
+}
+
+/* for pictures that need even more of a shove to the right*/
+.picture8 {
+    width: 215px;
+    height: 215px;
+    padding-top: 9%;
+    padding-right: .5%;
+    border: 2px solid black;
+}
+.picture9 {
+    width: 215px;
+    height: 215px;
+    border: 2px solid black;
+    padding-top: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.picture10 {
+    width: 215px;
+    height: 215px;
+    padding-top: 8%;
+    border: 2px solid black;
+    padding-left: .5%;
+    padding-right: .5%;
+}
+
+.square-outline {
   display: none;
-  float:left;
-  position: relative;
-  width: 30%;
-  padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
-  margin:1.66%;
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-size:contain;
+  float: left;
+  margin: 4px;
 }
 
-/*.img_1-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-bang.jpg");}
-.img_1-2 {background-image: url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-kachick.jpg");
+.square {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  /*display: none;*/
 }
-.img_1-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-hwuhhh.jpg");}
 
-.img_2-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Paper-Girls-bang-klick.png");}
-.img_2-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/The-Photographer-bratata.jpg");}
-.img_2-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/The-Photographer-tahtahtah.jpg");}
-
-
-
-.img_3-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Anyas-Ghost-thud-thud-thud.jpg");}
-.img_3-2 {background-image: url("file:///Users/Guest/Desktop/Week5GroupProject/img/Borb-hhheuurrk.jpg");
+.footer {
+  height: 100px;
 }
-.img_3-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Dressing-ptoo-ptoo.jpg");}
 
-.img_4-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/March-blam-blam.jpg");}
-.img_4-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Pleasant-hworrrk.jpg");}
-.img_4-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Sculptor-bamp-bamp-bamp.jpg");}
-
-.img_5-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Sculptor-blarrr.jpg");}
-.img_5-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Wrinkles-chof-chof-chof.jpg");}
-.img_5-3{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Zita-brakka-brakka.jpg");}
-
-.img_6-1{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Zita-mph-mmff.jpg");}
-.img_6-2{background-image:url("file:///Users/Guest/Desktop/Week5GroupProject/img/Magic-Pen-pow.jpg");}*/
-
-
+/*.square {
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    padding-top: 9%;
+    display: none;
+}*/
 
 *::before,
 *::after {
@@ -111,6 +222,101 @@ img {
       box-sizing: border-box;
 }
 
-.col-md-3 {
-  /*float: left;*/
-}
+
+//MODAL STUFF
+  /* Style the Image Used to Trigger the Modal */
+  #myImg {
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+
+  #myImg:hover {opacity: 0.7;}
+
+  /* The Modal (background) */
+  .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1000; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+  #lightbox-image {
+    width: 100%;
+  }
+
+  .clickableTag:hover {
+    color: pink;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Modal Content (Image) */
+  .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+  }
+
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+  }
+
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+  }
+
+  @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)}
+      to {-webkit-transform:scale(1)}
+  }
+
+  @keyframes zoom {
+      from {transform:scale(0)}
+      to {transform:scale(1)}
+  }
+
+  /* The Close Button */
+  .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+      .modal-content {
+          width: 100%;
+      }
+  }
