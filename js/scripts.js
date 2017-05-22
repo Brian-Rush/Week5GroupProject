@@ -96,7 +96,7 @@ $('.square').click(function(clickedSquare) {
   var outputTags = function(e) {
     $("#caption").empty();
     for (var i = 2; i < displayTags.length; i++) {
-      var individTag = ("<span class='clickableTag' id=" + displayTags[i] + ">" + displayTags[i] + ", </span>")
+      var individTag = ("<span class='clickableTag' id=" + displayTags[i] + ">" + displayTags[i] + "</span>" + ", ")
         $("#caption").append(individTag);
     }
   }
